@@ -6,8 +6,18 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
    --cta:#4338CA;
-   --sidebar-bg:#0F172A;
+   /* --cta:#604AF4; */
+   --dark-bg:#1C1C1C;
+   --cta:#604AF4;
+    --grey-border:#282828;
+   --white:#EDEDED;
+   --btn-hover:#4a30f3;
+   --card-bg:#232323; 
+   --btn-active:#6f44ee;
+   /* --sidebar-bg:#0F172A; */
+   --sidebar-bg:#1C1C1C;
    --sidebar-active-txt:#0F172A;
+   --white-bg:#FAFAFA;
    --sidebar-txt:#676D7C;
    --sidebar-tab-bg:#1E293B;
    box-sizing: border-box
@@ -39,6 +49,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Archivo', sans-serif;
+ 
 }
 /*
   6. Improve media defaults
@@ -103,7 +114,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   height: 100vh;
-  background-color: white;
+  background-color:white;
   color: #000;
 }
 
