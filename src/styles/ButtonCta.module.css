@@ -1,0 +1,16 @@
+.buttonCta{
+    background: var(--cta);
+    padding: 2px 10px;
+    color: white;
+    font-weight: 400;
+    border: 2px solid var(--cta);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.buttonCta:hover{
+    background-color: var(--btn-hover);
+    border:2px solid var(--btn-hover)
+}
+.buttonCta:active{
+    border: 2px solid var(--btn-active);
+}
