@@ -1,15 +1,24 @@
 import Link from 'next/link'
-import { ChangeEvent, ChangeEventHandler, useState } from 'react'
+import { useState } from 'react'
 import styles from '../styles/AuthForm.module.css'
-import { ButtonCta } from './ButtonCta'
-
+import { ButtonCta, ButtonOutlined } from './'
+import { useLogin, useSignup } from '@/hooks'
 export const AuthForm = ({ pageName }: { pageName: string }) => {
-    const [userCredentials, setUserCredentials] = useState({
+    const initialFormState = {
         firstName: '',
         lastName: '',
         email: '',
         password: ''
-    })
+    }
+    const [userCredentials, setUserCredentials] = useState(initialFormState)
+    const loginMutation = useLogin();
+    const signupMutation = useSignup();
+    const testCredentials = {
+        firstName: "Surya",
+        lastName: "K S",
+        email: "surya@gmail.com",
+        password: "123004250",
+    }
     const onFirstNameChange = (event) => {
         setUserCredentials(prev => ({ ...prev, firstName: event.target.value }))
     }
@@ -25,20 +34,24 @@ export const AuthForm = ({ pageName }: { pageName: string }) => {
     return (
         <form className={styles.form} onSubmit={(e) => { e.preventDefault() }}>
             <div className={styles.inputs}>
-                <label htmlFor='firstname'>Firstname</label>
-                <input
-                    type="text"
-                    id='firstname'
-                    onChange={onFirstNameChange}
-                    value={userCredentials.firstName}
-                />
-                <label htmlFor='lastname'>lastname</label>
-                <input
-                    type="text"
-                    id='lastname'
-                    value={userCredentials.lastName}
-                    onChange={onLastNameChange}
-                />
+                {pageName !== 'Login' ? (
+                    <>
+                        <label htmlFor='firstname'>Firstname</label>
+                        <input
+                            type="text"
+                            id='firstname'
+                            onChange={onFirstNameChange}
+                            value={userCredentials.firstName}
+                        />
+                        <label htmlFor='lastname'>lastname</label>
+                        <input
+                            type="text"
+                            id='lastname'
+                            value={userCredentials.lastName}
+                            onChange={onLastNameChange}
+                        />
+                    </>) : null
+                }
                 <label htmlFor='email'>Email</label>
                 <input
                     type="email"
@@ -54,7 +67,21 @@ export const AuthForm = ({ pageName }: { pageName: string }) => {
                     onChange={onPasswordChange}
                 />
             </div>
-            <ButtonCta onClick={() => { }}>{pageName === 'Login' ? 'Login' : 'Signup'}</ButtonCta>
+
+            <ButtonCta onClick={() => {
+                if (pageName === 'Login') {
+                    loginMutation.mutate(userCredentials);
+                    setUserCredentials(initialFormState)
+                } else {
+                    signupMutation.mutate(userCredentials);
+                    setUserCredentials(initialFormState)
+                }
+            }}>{pageName === 'Login' ? 'Login' : 'Signup'}</ButtonCta>
+            {pageName === 'Login' ? <ButtonOutlined onClick={() => {
+                setUserCredentials(testCredentials)
+                loginMutation.mutate(userCredentials)
+                setUserCredentials(initialFormState)
+            }}>Use test credentials</ButtonOutlined> : null}
             <div className={styles.linkWrapper}>
                 {pageName === 'Login' ? 'Dont have an account ? ' : 'Already have an account ? '}
                 <Link className={styles.link} href={pageName === 'Login' ? '/Signup' : 'Login'}>
