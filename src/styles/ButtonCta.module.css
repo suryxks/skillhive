@@ -14,3 +14,21 @@
 .buttonCta:active{
     border: 2px solid var(--btn-active);
 }
+
+.buttonOutlined{
+    background: var(--white);
+    padding: 2px 10px;
+    color: var(--cta);
+    font-weight: 400;
+    border: 2px solid var(--cta);
+    border-radius: 4px;
+    cursor: pointer;
+}
+.buttonOutlined:hover{
+    color: var(--white);
+    background-color: var(--btn-hover);
+    border:2px solid var(--btn-hover)
+}
+.buttonOutlined:active{
+    border: 2px solid var(--btn-active);
+}

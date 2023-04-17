@@ -1,0 +1,17 @@
+.sidebar{
+    background-color: var(--sidebar-bg);
+    width: 15vw;
+    padding: 1rem;
+    height:  calc(100vh - 56px)
+}
+.tab{
+    background-color: var(--sidebar-tab-bg);
+    color: white;
+    /* width: fit-content; */
+    list-style: none;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 90%;
+    border-radius: 4px;
+}
