@@ -1,0 +1,45 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 2px solid #E2E8F0;
+    background-color: #EDF2F7;
+    border-radius: 4px;
+    padding: 1rem;
+   position: absolute;
+   inset: 0;
+   margin: auto;
+   height: fit-content;
+    gap: 1rem;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+}
+.inputs>input{
+    background-color: var(--white-bg);
+    border: 1px solid silver;
+    border-radius: 4px;
+    outline: none;
+    color: black;
+    padding: 4px;
+}
+.inputs>input:focus{
+    outline:2px solid var(--cta);
+    border: none;
+}
+.inputs>label{
+    /* color: var(--cta); */
+    font-weight: bold;
+    
+}
+.link{
+    color: var(--cta);
+    font-weight: bold;
+    text-align: center;
+}
+.linkWrapper{
+    font-weight: bold;
+    text-align: center;
+}

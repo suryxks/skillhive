@@ -1,0 +1,11 @@
+.icon{
+    color: var(--btn-hover);
+    font-size:1.5rem;
+    font-weight: bolder;
+    cursor: pointer;
+    padding:0.5rem;
+    border-radius: 4px;
+}
+.icon:hover{
+    background-color: var(--sidebar-tab-bg);
+}
