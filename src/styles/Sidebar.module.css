@@ -2,7 +2,8 @@
     background-color: var(--sidebar-bg);
     width: 15vw;
     padding: 1rem;
-    height:  calc(100vh - 56px)
+    height:  calc(100vh - 56px);
+    grid-area: sidebar;
 }
 .tab{
     background-color: var(--sidebar-tab-bg);

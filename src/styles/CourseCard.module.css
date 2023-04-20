@@ -1,4 +1,25 @@
 .courseCard{
-    border: 2px solid red;
+    border: 2px solid lightblue;
     border-radius: 4px;
+    width: 350px;
+   
+}
+.titleContainer{
+    background-image: url("https://gstatic.com/classroom/themes/img_bookclub.jpg");
+    color:whitesmoke;
+    font-weight: 700;
+    margin: auto;
+    height: 100px;
+    padding-top: 1rem;
+    background-size: cover;
+}
+.title{
+    margin:0.5rem;
+    width: fit-content;
+}
+.content{
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+    
 }

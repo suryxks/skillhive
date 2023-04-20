@@ -9,6 +9,7 @@
     max-height: 56px;
     position: sticky;
     top:0;
+    grid-area: appbar;
 }
 .actions{
     display: flex;
